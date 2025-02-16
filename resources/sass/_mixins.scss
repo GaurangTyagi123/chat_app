@@ -1,0 +1,15 @@
+@mixin flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin btn{
+    border: none;
+    height: 3.5rem;
+    width: 12rem;
+    background-color: $color-tertiary;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 1.4em;
+    box-shadow: 0 1.5rem 4rem $box-shadow-light;
+}
