@@ -1,0 +1,68 @@
+.login{
+    &__container{
+        height: 80vh;
+        border-bottom: 1px solid $label_color;
+        border-radius: 2rem;
+        margin-inline: 3rem;
+    }
+    &__form{
+       @include flex;
+       flex-direction: column;
+       justify-content: center;
+       padding-block-start: 5rem;
+       height: 100%;
+       gap: 2rem;
+    }
+    &__label{
+        font-size: 2.2rem;
+        color : $label_color;
+        letter-spacing: .4rem;
+        font-weight: 400;
+        margin-block-end: 2rem
+    }
+    &__field{
+        @include flex;
+        align-items: baseline;
+        flex-direction: column;
+        width: 90%;
+        font-family: inherit;
+    }
+    &__input__group{
+        width: 100%;
+        height: 100%;
+    }
+    &__input{
+        width: 60%;
+        height: 3rem;
+        border-radius: 2rem;
+        border:none;
+        font-size: 1.4rem;
+        padding-inline-start: 2rem;
+        color:$label_color;
+    }
+    &__input:focus{
+        outline:2px solid violet;
+    }
+    &__field--remember{
+        font-size: 1.4rem;
+        width: 100%;
+        @include flex;
+        gap: 1rem;
+    }
+    &__btn{
+        height: 5rem;
+        width: 100%;
+        @include flex;
+        justify-content: flex-start;
+        gap: 2rem
+    }
+}
+.btn--login{
+    @include btn;
+    transition: translate .6s ease-in-out,scale .6s ease-in-out;
+}
+.btn--login:hover{
+    translate: 0 .4rem;
+    scale: 1.01;
+    box-shadow: 0 1.5rem 4rem $box-shadow-dark;
+}

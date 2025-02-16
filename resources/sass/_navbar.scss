@@ -1,0 +1,93 @@
+.navbar{
+    height: 10vh;
+    min-width: 100%;
+    background-color: $color-tertiary;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 1.5rem 4rem $box-shadow-light;
+
+    &__container{
+        width: 100%;
+        @include flex;
+        justify-content: space-between;
+        margin-inline: 5rem;
+    }
+
+    &__brand{
+        color: #fff;
+        font-size: 2rem;
+        text-decoration: none;
+        font-family: inherit;
+        font-size: 200;
+        cursor: pointer;
+    }
+    &__arrow{
+        height: 2rem;
+        width: 2rem;
+        fill : #fff;
+        display: none
+    }
+    &__list{
+        @include flex;
+        width: 20%;
+        justify-content: space-evenly;
+        gap: 2rem;
+        list-style: none;
+    }
+    &__link{
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.4em;
+        font-family: $font_poppins;
+        font-weight: $font_weight_mid;
+        letter-spacing: $letter_spacing_light;
+        text-transform: lowercase;
+        &--logout{
+            border: 2px solid $body_bg;
+            padding: .4em;
+            cursor: pointer;
+            font-family: $font_poppins;
+            font-size: $font_weight_light;
+        }
+    }
+    &__list__item--highlight{
+        background-color: $body_bg;
+        display: grid;
+        place-items: center;
+        min-width: 9.5rem;
+        height: 3rem;
+        border-radius: 2rem;
+        transition: translate .2s ease-in-out;
+        cursor: pointer;
+
+        &:hover{
+            translate: 0 .6rem;
+        }
+
+        &>a{
+            color:$color-tertiary
+        }
+    }
+}
+@media (max-width: 50em) {
+    .navbar{
+        height: 5vh;
+    }
+    .navbar__brand{
+        display: flex;
+        width: 10rem;
+        gap: 2rem;
+        font-size: 1.5rem;
+    }
+    .navbar__arrow{
+        display: block;
+    }
+}
+@media (max-width:25em){
+    .navbar__list{
+        width: max-content;
+    }
+    .navbar__link--logout{
+        font-size: 1rem;
+        width: 100%;
+    }
+}
