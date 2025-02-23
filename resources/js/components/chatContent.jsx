@@ -1,14 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useLayoutEffect, useState, createRef } from 'react'
 
-
 function chatContent() {
   const displayRef = createRef()
   const chat = data !== 0 ? data.chat : false;
   const { chat_data } = chat ? chat : [];
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('')
-
 
   const sendChat = () => {
     if (message.length) {
@@ -19,7 +17,7 @@ function chatContent() {
         chats_id: chat.id,
         message
       }
-      axios.post(`http://localhost:8000/api/chat`, meta_data, { headers: { "X-Socket-Id": window.Echo.socketId() } }).then(res => {
+      axios.post(`${url}/api/chat`, meta_data, { headers: { "X-Socket-Id": window.Echo.socketId() } }).then(res => {
         let response = res.data;
         setMessage('')
         setMessages(prevState => [...prevState, response].sort((a, b) => {

@@ -10,10 +10,9 @@
         const data = {
             user_id : {!! auth()->user()->id !!},
             users : {!! $users !!},
-            chat : {!! $chat ?? 0 !!}
+            chat : {!! $chat ?? 0 !!},
         }
-        console.log(data.chat)
-
+        const url = `{{ config('app.url','127.0.1.3') }}`
         const navbar__arrow = document.querySelector(".navbar__arrow");
         navbar__arrow.addEventListener("click",e=>{
             const chat__list__container = document.querySelector(".chat__list__container");
