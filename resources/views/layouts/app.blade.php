@@ -18,7 +18,10 @@
 
     <!-- Scripts -->
     @viteReactRefresh
-    @vite(['resources/sass/app.scss', 'resources/js/app.jsx'])
+    <link rel="preload" as="style" href="https://web-production-24a9d.up.railway.app/build/assets/app-CLv-1k7w.css" />
+    <link rel="modulepreload" href="https://web-production-24a9d.up.railway.app/build/assets/app-PwcV3Ovl.js" />
+    <link rel="stylesheet" href="https://web-production-24a9d.up.railway.app/build/assets/app-CLv-1k7w.css" />
+    <script type="module" src="https://web-production-24a9d.up.railway.app/build/assets/app-PwcV3Ovl.js"></script>
 </head>
 
 <body>
@@ -28,7 +31,7 @@
                 <a class="navbar__brand">
                     {{ config('app.name', 'Laravel') }}
                     <svg class="navbar__arrow">
-                        <use xlink:href="http://localhost:8000/icons/sprite.svg#icon-arrow-right"></use>
+                        <use xlink:href={{ config('app.url') }}."/icons/sprite.svg#icon-arrow-right"></use>
                     </svg>
                 </a>
 
@@ -50,7 +53,7 @@
                     @else
                         <li class="navbar__list__item">
                             <a class="navbar__link navbar__link--logout" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();"
+                                                                 document.getElementById('logout-form').submit();"
                                 title="logout">
                                 {{ Auth::user()->name }}
                             </a>
