@@ -56,7 +56,7 @@ class ChatController extends Controller
      */
     public function show(int $id)
     {
-        $chat = Chats::where('reciever_id',$id)->where('user_id',$id)->with('chat_data')->get()->first();
+        $chat = Chats::where('reciever_id',$id)->where('user_id',auth()->user()->id)->with('chat_data')->get()->first();
         $users = User::all(['name','id']);
         if($chat){
             return view('home')->with(compact('chat','users'));
